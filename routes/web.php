@@ -15,9 +15,6 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->middleware('auth');
 
-// Login Routes
-Route::get('/login', LoginController::class, 'show');
-Route::post('/login', LoginController::class, 'store');

@@ -1,0 +1,41 @@
+.col {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+input:invalid + span::after {
+    position: absolute;
+    content: "✖";
+    padding-left: 5px;
+  }
+  
+  input:valid + span::after {
+    position: absolute;
+    content: "✓";
+    padding-left: 5px;
+  }
+
+.date-class {
+    display: flex;
+    flex-direction: row;
+}
+.date {
+    width: 29.9rem;
+}
+
+.facility {
+    margin: 2rem 0 0 9rem;
+}
+
+input {
+    border: 1px solid black;
+}
+
+.booking {
+    margin: 1rem 0 0 -9.78rem;
+    width: 123.4%;
+    font-size: 19px;
+    height: 3rem;
+}

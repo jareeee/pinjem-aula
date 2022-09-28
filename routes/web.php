@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,10 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('main.index');
 })->middleware('auth');
+
+Route::get('/booking', [BookingController::class, 'show'])->name('booking')->middleware('auth');
+Route::post('/booking', [BookingController::class, 'create'])->name('booking-post')->middleware('auth');
+
 

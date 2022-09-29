@@ -17,7 +17,7 @@ input:invalid + span::after {
     padding-left: 5px;
   }
 
-.date-class {
+.form-class {
     display: flex;
     flex-direction: row;
 }
@@ -30,7 +30,9 @@ input:invalid + span::after {
 }
 
 input {
-    border: 1px solid black;
+    border: 1.5px solid black;
+    border-radius: 15px;
+    text-align: center;
 }
 
 .booking {
@@ -38,4 +40,14 @@ input {
     width: 123.4%;
     font-size: 19px;
     height: 3rem;
+    background-color: #FFB151;
+    color: white;
+    border: transparent;
 }
+
+.is-invalid {
+    border:1.5px solid red !important;
+    border-radius: 15px;
+    text-align: center;
+}
+

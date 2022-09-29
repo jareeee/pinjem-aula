@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -19,15 +20,27 @@ class BookingController extends Controller
 
     public function create(Request $request)
     {
-        $Validator = $request->validate([
+        $validator = $request->validate([
             'full_name' => 'required|string',
-            'date' => 'required|date_format:dd-mm-yy',
-            'no_telepon' => 'required|numeric',
+            'date' => 'required|date_format:Y-m-d|unique:bookings',
+            'no_telepon' => 'required|phone:id',
             'time_start' => 'date_format:H:i',
             'time_end' => 'date_format:H:i|after:time_start',
-
+            'name_event' => 'required|string',
+            'name_teacher' => 'required|string',
+            'bangku' => 'required'
         ]);
 
-        return $request->all();
+        $validator['speaker'] =  $request->boolean('speaker');
+        $validator['proyektor'] = $request->boolean('proyektor');
+        
+        Booking::create($validator) ;
+        return redirect('/booking')->with('success', 'Anda berhasil booking');
+
+        
+        
+
+
+
     }
 }

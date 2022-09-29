@@ -139,6 +139,8 @@ return [
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute must be a valid URL.',
     'uuid' => 'The :attribute must be a valid UUID.',
+    'phone' => 'The :attribute field contains an invalid number.',
+   
 
     /*
     |--------------------------------------------------------------------------
@@ -154,6 +156,22 @@ return [
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
+        ],
+        'full_name' => [
+            'required' => 'Nama lengkap harus diisi',
+        ],
+        'no_telepon' => [
+            'required' => 'No. Telepon harus diisi',
+        ],
+        'name_event' => [
+            'required' => 'Nama acara harus diisi',
+        ],
+        'name_teacher' => [
+            'required' => 'Nama pengawas harus diisi',
+        ],
+        'date' => [
+            'required' => 'Tanggal peminjaman harus diisi',
+            'unique' => 'Maaf tanggal tersebut sudah terisi silahkan cari tanggal lain'
         ],
     ],
 

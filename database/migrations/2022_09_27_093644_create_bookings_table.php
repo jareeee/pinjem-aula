@@ -22,10 +22,9 @@ return new class extends Migration
             $table->time('time_start');
             $table->time('time_end');
             $table->string('name_teacher');
-            $table->integer('speaker');
-            $table->integer('proyektor');
+            $table->boolean('speaker');
+            $table->boolean('proyektor');
             $table->integer('bangku');
-
             $table->timestamps();
         });
     }

@@ -160,11 +160,24 @@ return [
         'full_name' => [
             'required' => 'Nama lengkap harus diisi',
         ],
+        'username' => [
+            'required' => 'Username  harus diisi',
+        ],
+        'email' => [
+            'required' => 'Email harus diisi',
+            'unique' => 'Email sudah terpakai'
+        ],
         'no_telepon' => [
             'required' => 'No. Telepon harus diisi',
         ],
         'name_event' => [
             'required' => 'Nama acara harus diisi',
+        ],
+        'password' => [
+            'required' => 'Password harus diisi',
+        ],
+        'password_confirmation' => [
+            'required' => 'Password Konfirmasi harus diisi',
         ],
         'name_teacher' => [
             'required' => 'Nama pengawas harus diisi',

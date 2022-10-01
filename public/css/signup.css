@@ -7,7 +7,6 @@
 }
 
 .bg{
-    height: 100%;
     width: 100%;
     background-color: #F5F2EA;
     background-position: center;
@@ -18,7 +17,6 @@
 .form{
     position: relative;
     width: 380px;
-    height: 490px;
     background: #fff;
     margin: 7% auto;
     padding: 10px;
@@ -33,6 +31,12 @@ h2{
     font-size: 30px;
     margin-top: -0.3rem;
 }
+form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .is-error {
     border-color: red !important;
     width: 80%;
@@ -40,10 +44,6 @@ h2{
     border-radius: 15px;
     text-align: center;
     font-size: 17px;
-}
-
-label {
-    margin-left: 2.45rem;
 }
 
 .input-group{
@@ -83,6 +83,5 @@ label {
     position: relative;
     top: 0.5rem;
     color: #000;
-    font-size: 16px;
-    
+    font-size: 16px;  
 }

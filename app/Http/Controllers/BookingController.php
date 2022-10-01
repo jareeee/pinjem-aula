@@ -16,7 +16,7 @@ class BookingController extends Controller
     public function show(Request $request)
     {
         return view('main.booking',[
-            'schedules' => Booking::orderBy('id', 'desc')->paginate(2)
+            'schedules' => Booking::with('user')->orderBy('id', 'desc')->paginate(2)
         ]);
     }
 
@@ -31,6 +31,7 @@ class BookingController extends Controller
             'bangku' => 'required'
         ]);
 
+        $validator['user_id'] = auth()->user()->id;
         $validator['speaker'] =  $request->boolean('speaker');
         $validator['proyektor'] = $request->boolean('proyektor');
         

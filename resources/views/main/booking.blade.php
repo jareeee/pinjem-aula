@@ -29,12 +29,12 @@
 <div class="box-form">
   <form action="{{ route('booking-post') }}" method="post">
     @csrf
-    <div class="container mt-4">
-      <div class="row">
+          <div class="container mt-4">
+            <div class="row">
                   <div class="col">
-                    <label for="full_name">Nama lengkap</label>
-                    <input type="text" class="@error('full_name') is-invalid @enderror" name="full_name" id="full_name">
-                    @error('full_name')
+                    <label for="name_event">Nama acara</label>
+                    <input type="text" name="name_event" class="@error('name_event') is-invalid @enderror" id="name_event">
+                    @error('name_event')
                       <div class="invalid-feedback">
                         {{ $message }}
                       </div>  
@@ -52,9 +52,9 @@
                 </div>
                 <div class="row">
                   <div class="col">
-                    <label for="no_telepon">Nomer telepon</label>
-                    <input type="tel" pattern="[0-9]{4}[0-9]{4}[0-9]{4}" class="@error('no_telepon') is-invalid @enderror" name="no_telepon" id="no_telepon" style="width:31.8rem;">
-                    @error('no_telepon')
+                    <label for="name_teacher">Nama pengawas</label>
+                    <input type="text" name="name_teacher" class="@error('name_teacher') is-invalid @enderror" id="name_teacher" autocomplete="off" style="width:31.8rem;">
+                    @error('name_teacher')
                       <div class="invalid-feedback">
                         {{ $message }}
                       </div>  
@@ -84,26 +84,6 @@
                       </div>  
                     @enderror
                   </div>  
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <label for="name_event">Nama acara</label>
-                    <input type="text" name="name_event" class="@error('name_event') is-invalid @enderror" id="name_event">
-                    @error('name_event')
-                      <div class="invalid-feedback">
-                        {{ $message }}
-                      </div>  
-                    @enderror
-                  </div>
-                  <div class="col">
-                    <label for="name_teacher">Nama pengawas</label>
-                    <input type="text" name="name_teacher" class="@error('name_teacher') is-invalid @enderror" id="name_teacher" autocomplete="off">
-                    @error('name_teacher')
-                      <div class="invalid-feedback">
-                        {{ $message }}
-                      </div>  
-                    @enderror
-                  </div>
                 </div>
               </div>
 
@@ -147,7 +127,7 @@
           <tbody>
             @foreach($schedules as $schedule)
             <tr>
-              <td>{{ $schedule->full_name }}</td>
+              <td>{{ $schedule->user->full_name }}</td>
               <td>{{ $schedule->name_event }}</td>
               <td>{{ date('d, M  Y', strtotime($schedule->date)) }}</td>
               <td>{{ date('H:i', strtotime($schedule->time_start))  }} - {{ date('H:i', strtotime($schedule->time_end)) }}</td>

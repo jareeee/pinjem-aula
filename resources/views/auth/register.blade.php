@@ -15,8 +15,21 @@
         <form action="{{ route('register') }}" method="POST" class="input-group">
         @csrf 
             <div>
+                <input class="input @error('full_name') is-error @enderror"  name="full_name" id="full_name" type="text" placeholder="Nama Lengkap">
+                @error('full_name')
+                    <label for="">{{ $message }}</label>
+                @enderror
+            </div>
+            <div>
                 <input class="input @error('username') is-error @enderror"  name="username" id="username" type="text" placeholder="Username">
                 @error('username')
+                    <label for="">{{ $message }}</label>
+                @enderror
+            </div>
+
+            <div>
+                <input class="input @error('no_telepon') is-error @enderror"  name="no_telepon" id="no_telepon" type="text" placeholder="No. Telepon">
+                @error('no_telepon')
                     <label for="">{{ $message }}</label>
                 @enderror
             </div>

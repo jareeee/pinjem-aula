@@ -15,7 +15,9 @@ class BookingController extends Controller
      */
     public function show(Request $request)
     {
-        return view('main.booking');
+        return view('main.booking',[
+            'schedules' => Booking::orderBy('id', 'desc')->paginate(2)
+        ]);
     }
 
     public function create(Request $request)

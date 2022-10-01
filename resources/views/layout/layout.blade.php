@@ -46,7 +46,7 @@
                   Hi, {{ auth()->user()->username }}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+                  <li><a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a></li>
                   <form action="/logout" method="post">
                     @csrf
                     <button type="submit" class="dropdown-item">Log Out</button>

@@ -171,7 +171,7 @@ return [
         ],
         'date' => [
             'required' => 'Tanggal peminjaman harus diisi',
-            'unique' => 'Maaf tanggal tersebut sudah terisi silahkan cari tanggal lain'
+            'unique' => 'Tanggal tersebut sudah dibooking, silahkan cari tanggal lain'
         ],
     ],
 

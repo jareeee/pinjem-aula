@@ -51,3 +51,8 @@ input {
     text-align: center;
 }
 
+.required {
+    margin-top: 2rem;
+    /* background-color: #FFB151; */
+    border-radius: 20px;
+}

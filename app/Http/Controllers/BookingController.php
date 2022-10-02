@@ -36,7 +36,7 @@ class BookingController extends Controller
         $validator['proyektor'] = $request->boolean('proyektor');
         
         Booking::create($validator) ;
-        return redirect('/booking')->with('success', 'Anda berhasil booking');
+        return redirect('/booking')->with('success', 'Anda berhasil booking, silahkan tunggu konfirmasi dari admin');
 
         
         

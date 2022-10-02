@@ -1,11 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
 body {
   font-size: .875rem;
+  font-family: 'Poppins';
 }
 
 .feather {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   vertical-align: text-bottom;
+}
+
+.profil {
+  color: #706F6F;
+}
+
+.profil h4{
+  font-size: 2.5rem;
+}
+
+.profil .row {
+  margin-top: 2rem;
+  margin-left: 7rem;
+}
+
+.profil .row .col input{
+  width: 20rem;
+  text-indent: 0.7rem;
+  color: #706F6F;
+  height: 40px;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  font-size: 17px;
+  border: 1px solid #54BAB9;
+  border-radius: 10px;
+}
+
+.active-link {
+  background-color: #54BAB9 !important;
+  border-radius: 20px;
 }
 
 /*
@@ -23,7 +55,14 @@ body {
   left: 0;
   z-index: 100; /* Behind the navbar */
   padding: 48px 0 0; /* Height of navbar */
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  background-color: #D6E9E9;
+}
+
+#sidebarMenu ul li a {
+  color: #625C57;
+  font-size: 18px;
+  margin: 1rem 1.2rem 0 1rem;
 }
 
 @media (max-width: 767.98px) {
@@ -32,6 +71,10 @@ body {
   }
 }
 
+.logout {
+  margin-right: 5rem;
+  margin-bottom: 1rem;
+}
 .sidebar-sticky {
   position: relative;
   top: 0;
@@ -72,9 +115,10 @@ body {
 .navbar-brand {
   padding-top: .75rem;
   padding-bottom: .75rem;
-  font-size: 1rem;
+  font-size: 22px;
   background-color: rgba(0, 0, 0, .25);
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+  font-family: "Poppins";
 }
 
 .navbar .navbar-toggler {

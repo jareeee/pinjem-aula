@@ -24,6 +24,7 @@ Route::get('/booking', [BookingController::class, 'show'])->name('booking')->mid
 Route::post('/booking', [BookingController::class, 'create'])->name('booking-post')->middleware('auth');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::get('/dashboard/schedule', [DashboardController::class, 'show_schedule'])->name('schedule-dashboard')->middleware('auth');
 Route::get('/admin', function() {
     return view('dashboard.admin');
 });

@@ -11,21 +11,17 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
-    <style>
-        trix-toolbar [data-trix-button-group="file-tools"]{
-            display:none;
-        }
-    </style>
+
   </head>
   <body>
     
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">Pinjem Aula</a>
+<header class="navbar navbar-dark sticky-top navbar-dark bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fw-bold" href="/">Pinjem Aula</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-nav">
-        <div class="nav-item text-nowrap">
+        <div class="nav-item logout text-nowrap">
         <form action="/logout" method="post">
               @csrf
               <button type="submit" class="nav-link px-3 bg-dark border-0"><span data-feather="log-out" class="mx-2"></span>Log Out</button>
@@ -35,13 +31,19 @@
     </header>
     <div class="container-fluid">
     <div class="row">
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
         <div class="position-sticky pt-3">
             <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }} " aria-current="page" href="/dashboard">
+                <a class="nav-link {{ Request::is('dashboard') ? 'active-link' : '' }} " aria-current="page" href="/dashboard">
+                <span data-feather="user"></span>
+                Profil
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/schedule') ? 'active-link' : '' }} " aria-current="page" href="/dashboard/schedule">
                 <span data-feather="calendar"></span>
-                Jadwal Saya
+                Jadwal
                 </a>
             </li>
             @can('admin')

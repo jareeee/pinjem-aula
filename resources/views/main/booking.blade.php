@@ -129,7 +129,7 @@
             <tr>
               <td>{{ $schedule->user->full_name }}</td>
               <td>{{ $schedule->name_event }}</td>
-              <td>{{ date('d, M  Y', strtotime($schedule->date)) }}</td>
+              <td>{{ \Carbon\Carbon::parse($schedule->date)->locale('id')->isoFormat('D MMMM YYYY') }}</td>
               <td>{{ date('H:i', strtotime($schedule->time_start))  }} - {{ date('H:i', strtotime($schedule->time_end)) }}</td>
             </tr>
             @endforeach
@@ -141,7 +141,7 @@
       <script>
       const date = document.querySelector('#date');
       const getDate = new Date;
-      const formattedDate = `${getDate.getFullYear()}-${getDate.getMonth() < 10 ? '0' : ''}${getDate.getMonth()}-${getDate.getDate() < 10 ? '0' : ''}${getDate.getDate()+1}`
+      const formattedDate = `${getDate.getFullYear()}-${getDate.getMonth() + 1< 10 ? '0' : ''}${getDate.getMonth() + 1}-${getDate.getDate() < 10 ? '0' : ''}${getDate.getDate()+1}`
       date.value = formattedDate;
       date.min = formattedDate;
     </script>

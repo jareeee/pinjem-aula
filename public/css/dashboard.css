@@ -8,6 +8,13 @@ body {
   width: 24px;
   height: 24px;
   vertical-align: text-bottom;
+    /* color:#fff !important; */
+}
+
+.btn-info {
+  background-color: #54BAB9;
+  color: white;
+  border-radius: 40px;
 }
 
 .profil {
@@ -38,6 +45,11 @@ body {
 .active-link {
   background-color: #54BAB9 !important;
   border-radius: 20px;
+  color: #fff !important;
+}
+
+.active-link .feather  {
+ color: #fff !important;
 }
 
 /*
@@ -61,7 +73,7 @@ body {
 
 #sidebarMenu ul li a {
   color: #625C57;
-  font-size: 18px;
+  font-size: 16px;
   margin: 1rem 1.2rem 0 1rem;
 }
 

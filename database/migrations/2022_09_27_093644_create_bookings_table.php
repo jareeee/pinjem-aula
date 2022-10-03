@@ -24,6 +24,7 @@ return new class extends Migration
             $table->boolean('speaker');
             $table->boolean('proyektor');
             $table->integer('bangku');
+            $table->boolean('is_confirm')->default(false);
             $table->timestamps();
         });
     }

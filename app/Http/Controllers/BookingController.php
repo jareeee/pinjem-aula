@@ -16,7 +16,10 @@ class BookingController extends Controller
     public function show(Request $request)
     {
         return view('main.booking',[
-            'schedules' => Booking::with('user')->orderBy('id', 'desc')->paginate(2)
+            'schedules' => Booking::where('is_confirm', 1)
+                                        ->with('user')
+                                        ->orderBy('id', 'desc')
+                                        ->paginate(2)
         ]);
     }
 

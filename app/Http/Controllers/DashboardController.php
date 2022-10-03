@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Booking;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -16,6 +17,8 @@ class DashboardController extends Controller
 
     public function show_schedule()
     {
-        return view('dashboard.schedule');
+        return view('dashboard.schedule', [
+            'bookings' => Booking::where('user_id', auth()->user()->id)->get()
+        ]);
     }
 }

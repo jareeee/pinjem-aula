@@ -20,7 +20,11 @@
           <tr>
               <td>{{ \Carbon\Carbon::parse($booking->date)->locale('id')->isoFormat('D MMMM YYYY') }}</td>
               <td>{{ date('H:i', strtotime($booking->time_start))  }} - {{ date('H:i', strtotime($booking->time_end)) }}</td>
-            <td>Otto</td>
+              @if($booking->is_confirm === 1)
+                <td>Terkonfirmasi</td>
+              @else
+                <td>Menunggu</td>
+              @endif
           </tr>
         @endforeach
         </tbody>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,7 +14,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('dashboard.admin');
+        $this->authorize('admin');
+        return view('dashboard.admin',[
+            'bookings' => Booking::all()
+        ]);
     }
 
     /**
@@ -34,7 +38,8 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+    
     }
 
     /**
@@ -66,9 +71,10 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Booking $admin)
     {
-        //
+        Booking::where('id', $admin->id)->update(['is_confirm' => $request->boolean('is_confirm')]);
+        return redirect('/dashboard/admin')->with('success', 'booking berhasil dikonfirmasi');
     }
 
     /**
@@ -77,8 +83,9 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Booking $admin)
     {
-        //
+        Booking::destroy($admin->id);
+        return redirect('/dashboard/admin')->with('success', 'booking berhasil dihapus');;
     }
 }

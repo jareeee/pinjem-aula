@@ -26,4 +26,4 @@ Route::post('/booking', [BookingController::class, 'create'])->name('booking-pos
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 Route::get('/dashboard/schedule', [DashboardController::class, 'show_schedule'])->name('schedule-dashboard')->middleware('auth');
-Route::resource('/dashboard/admin', AdminController::class)->middleware('auth');
+Route::resource('/dashboard/admin', AdminController::class);

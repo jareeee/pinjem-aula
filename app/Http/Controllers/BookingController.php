@@ -19,7 +19,8 @@ class BookingController extends Controller
             'schedules' => Booking::where('is_confirm', 1)
                                         ->with('user')
                                         ->orderBy('id', 'desc')
-                                        ->paginate(2)
+                                        ->paginate(2),
+            'title' => 'Booking',
         ]);
     }
 

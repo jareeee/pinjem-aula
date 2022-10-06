@@ -18,7 +18,9 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('main.index');
+    return view('main.index',[
+        'title' => 'Home',
+    ]);
 })->middleware('auth');
 
 Route::get('/booking', [BookingController::class, 'show'])->name('booking')->middleware('auth');

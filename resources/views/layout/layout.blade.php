@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{-- datepicker --}}
+
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -24,12 +24,12 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/booking.css">
 
-    <title>Peminjaman Aula</title>
+    <title>Peminjaman Aula - {{ $title }}</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo" width="50rem"></a>
+          <a class="navbar-brand" href="/">Pinjem Aula</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>

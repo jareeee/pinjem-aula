@@ -15,7 +15,7 @@
         <form action="{{ route('login') }}" method="post" class="input-group">
             @csrf
             <div>
-            <input class="input @error('email') is-error @enderror" name="email" type="email" placeholder="Email">
+            <input class="input @error('email') is-error @enderror" name="email" type="email" placeholder="Email" value="{{ $request->email ?? old('email') }}">
             @error('email')
             <label for="">{{ $message }}</label>
             @enderror

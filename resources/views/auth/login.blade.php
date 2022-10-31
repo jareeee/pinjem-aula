@@ -29,6 +29,7 @@
             <div>
             <input class="submit" type="submit" value="SIGN IN">
             </div>
+            <small class="acc"><a href="{{ route('password.request') }}">Forgot password?</a></small><br>
             <small class="acc" >Don't have an account ? <a href="{{ route('register') }}">Register</a></small>
         </form>
     </div>

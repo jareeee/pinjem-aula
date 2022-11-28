@@ -8,6 +8,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Order;
 
 class User extends Authenticatable
 {
@@ -48,5 +49,10 @@ class User extends Authenticatable
     public function booking()
     {
         return $this->hasMany(Booking::class);
+    }
+
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
     }
 }

@@ -40,7 +40,6 @@ class CreateNewUser implements CreatesNewUsers
             'no_telepon' => $input['no_telepon'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
-            'remember_token' => $input['remember_token'],
         ]);
     }
 }

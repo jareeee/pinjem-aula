@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -38,8 +39,16 @@ class BookingController extends Controller
         $validator['user_id'] = auth()->user()->id;
         $validator['speaker'] =  $request->boolean('speaker');
         $validator['proyektor'] = $request->boolean('proyektor');
+
+        $validator2 = $request->validate([
+            'price' => 'required'
+        ]);
+        $validator2['users_id'] = auth()->user()->id;
+
+
         
         Booking::create($validator) ;
+        Order::create($validator2);
         return redirect('/booking')->with('success', 'Anda berhasil booking, silahkan tunggu konfirmasi dari admin');
 
         

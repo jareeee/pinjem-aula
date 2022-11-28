@@ -103,6 +103,10 @@
                         <input type="number" name="bangku" id="bangku" min="1" value="1" style="width:3rem"">
                     </div>
                     <div class="row">
+                      <div class="col-lg-12">
+                        <label for="payment">Price : Rp. 150.000 </label>
+                        <input type="number" name="price" id="price" hidden value="150000" style="width: 100px; border: none; text-align: start; border-radius: 0;">
+                      </div>
                       <div class="col">
                         <input type="submit" value="Booking Now" class="booking">
                       </div>

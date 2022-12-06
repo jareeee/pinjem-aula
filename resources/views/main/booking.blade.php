@@ -18,22 +18,16 @@
     </ol>
   </div>
   <hr>
-  @if(session()->has('success'))
-    <div class="alert text-center alert-success alert-dismissible fade show" role="alert">
-      {{ session('success') }} 
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-  @endif
 </div>
 <h1 class="text-center mt-5 mb-2">Booking Form</h1>
 <div class="box-form">
-  <form action="{{ route('booking-post') }}" method="post">
+  <form action="{{ route('booking-post') }}" method="post" id="booking">
     @csrf
           <div class="container mt-4">
             <div class="row">
                   <div class="col">
                     <label for="name_event">Nama acara</label>
-                    <input type="text" name="name_event" class="@error('name_event') is-invalid @enderror" id="name_event">
+                    <input type="text" name="name_event" class="@error('name_event') is-invalid @enderror" id="name_event" required>
                     @error('name_event')
                       <div class="invalid-feedback">
                         {{ $message }}
@@ -42,7 +36,7 @@
                   </div>
                   <div class="col">
                     <label for="date">Tanggal peminjaman</label>
-                      <input type="date" name="date" id="date" class="date @error('date') is-invalid @enderror" autocomplete="off">
+                      <input type="date" name="date" id="date" class="date @error('date') is-invalid @enderror" autocomplete="off" required>
                     @error('date')
                       <div class="invalid-feedback">
                         {{ $message }}
@@ -53,7 +47,7 @@
                 <div class="row">
                   <div class="col">
                     <label for="name_teacher">Nama pengawas</label>
-                    <input type="text" name="name_teacher" class="@error('name_teacher') is-invalid @enderror" id="name_teacher" autocomplete="off" style="width:31.8rem;">
+                    <input type="text" name="name_teacher" class="@error('name_teacher') is-invalid @enderror" id="name_teacher" autocomplete="off" style="width:31.8rem;" required>
                     @error('name_teacher')
                       <div class="invalid-feedback">
                         {{ $message }}
@@ -104,11 +98,11 @@
                     </div>
                     <div class="row">
                       <div class="col-lg-12">
-                        <label for="payment">Price : Rp. 150.000 </label>
+                        <label for="price">Price : Rp. 150.000 </label>
                         <input type="number" name="price" id="price" hidden value="150000" style="width: 100px; border: none; text-align: start; border-radius: 0;">
                       </div>
                       <div class="col">
-                        <input type="submit" value="Booking Now" class="booking">
+                        <button type="submit" class="booking">Booking Now</button>
                       </div>
                     </div>
                 </div>

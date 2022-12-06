@@ -14,10 +14,10 @@ class BookingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show()
     {
         return view('main.booking',[
-            'schedules' => Booking::where('is_confirm', 1)
+            'schedules' => Booking::where('status', 1)
                                         ->with('user')
                                         ->orderBy('id', 'desc')
                                         ->paginate(2),
@@ -43,18 +43,14 @@ class BookingController extends Controller
         $validator2 = $request->validate([
             'price' => 'required'
         ]);
-        $validator2['users_id'] = auth()->user()->id;
+        $validator2['user_id'] = auth()->user()->id;
+        $validator2['number'] = rand();
+        $validator2['payment_status'] = 1;
 
 
         
-        Booking::create($validator) ;
+        Booking::create($validator);
         Order::create($validator2);
-        return redirect('/booking')->with('success', 'Anda berhasil booking, silahkan tunggu konfirmasi dari admin');
-
-        
-        
-
-
-
+        return redirect('/dashboard/payment')->with('success', 'Anda berhasil booking, silahkan bayar pesanan anda');
     }
 }

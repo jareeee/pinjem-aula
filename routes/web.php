@@ -32,4 +32,4 @@ Route::get('/dashboard/schedule', [DashboardController::class, 'show_schedule'])
 Route::get('/dashboard/payment', [DashboardController::class, 'show_payment'])->name('payment-dashboard')->middleware('auth');
 Route::resource('/dashboard/admin', AdminController::class);
 
-Route::post('payments/midtrans-notification', [PaymentCallbackController::class, 'receive'])->name('payment-callback')->middleware('auth');;
+Route::post('payments/midtrans-notification', [PaymentCallbackController::class, 'receive'])->name('payment-callback');

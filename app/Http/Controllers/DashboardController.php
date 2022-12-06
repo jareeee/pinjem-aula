@@ -27,7 +27,6 @@ class DashboardController extends Controller
     public function show_payment(Order $orders)
     {
         $orders = Order::where('user_id', auth()->user()->id)
-                        ->where('payment_status', 1)
                         ->get();
         foreach ($orders as $order) {
             $snapToken = $order->snap_token;

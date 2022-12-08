@@ -39,8 +39,12 @@ class DashboardController extends Controller
                 $order->snap_token = $snapToken;
                 $order->save();
             }
+            // return @dd(compact('orders'));
+            if($order->payment_status == 1) {
+                return view('dashboard.payment', compact('orders', 'snapToken'));
+            } else {
+                return view('dashboard.booked', compact('orders'));
+            }
         }
-        // return @dd(compact('orders'));
-        return view('dashboard.payment', compact('orders', 'snapToken'));
     }
 }
